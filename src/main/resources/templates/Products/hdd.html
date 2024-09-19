@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Memori</title>
+    <!-- ... 기존의 CSS 및 JavaScript 라이브러리 추가 ... -->
+    <link rel="stylesheet" href="/list.css">
+</head>
+<body>
+
+<nav th:replace="~{main_up :: main_upFragment}"></nav>
+<nav th:replace="~{main_nav :: main_navFragment}"></nav>
+
+<div class="container">
+    <div id="filter-body" class="filter-container">
+        <div class="filter-group">
+            <h4>제조사</h4>
+            <div class="filter-options" id="maker-options">
+                <button class="brand-option" value="DEEPCOOL" onclick="filterProducts(this.value)">DEEPCOOL</button>
+                <button class="brand-option" value="PCCOOLER" onclick="filterProducts(this.value)">PCCOOLER</button>
+                <button class="brand-option" value="NZXT" onclick="filterProducts(this.value)">NZXT</button>
+                <button class="brand-option" value="Thermalright" onclick="filterProducts(this.value)">Thermalright</button>
+                <button class="brand-option" value="darkFlash" onclick="filterProducts(this.value)">darkFlash</button>
+                <button class="brand-option" value="NOCTUA" onclick="filterProducts(this.value)">NOCTUA</button>
+                <button class="brand-option" value="ARCTIC" onclick="filterProducts(this.value)">ARCTIC</button>
+                <button class="brand-option" value="리안리" onclick="filterProducts(this.value)">리안리</button>
+                <button class="brand-option" value="잘만" onclick="filterProducts(this.value)">잘만</button>
+                <button class="brand-option" value="이엠텍" onclick="filterProducts(this.value)">이엠텍</button>
+            </div>
+        </div>
+
+         <div class="filter-group">
+             <h4>용량</h4>
+             <div class="filter-options" id="disk-options">
+                 <button class="brand-option" value="5이하" onclick="filterProducts(this.value)">5TB 이하</button>
+                 <button class="brand-option" value="5~10" onclick="filterProducts(this.value)">5~10TB</button>
+                 <button class="brand-option" value="10~15" onclick="filterProducts(this.value)">10~15TB</button>
+                 <button class="brand-option" value="15~20" onclick="filterProducts(this.value)">15~20TB</button>
+                 <button class="brand-option" value="20TB 이상" onclick="filterProducts(this.value)">20TB 이상</button>
+             </div>
+         </div>
+
+    </div>
+</div>
+
+<div class="container">
+    <div class="sortBtn">
+        <button onclick="sortTableByPrice('asc')">낮은 가격순</button>
+        <button onclick="sortTableByPrice('desc')">높은 가격순</button>
+    </div>
+
+    <h1>HDD</h1>
+    <nav th:replace="~{products_list :: products_list}"></nav>
+
+</div>
+</body>
+</html>
